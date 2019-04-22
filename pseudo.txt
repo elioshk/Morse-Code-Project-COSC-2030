@@ -1,3 +1,17 @@
+    
+Group members:
+
+Eli Oceanak
+
+Galen Damosso
+
+Fred Wittman
+
+Josh Mallone
+
+Trevor
+
+
 Node // Class which defines a node of a binary tree
 Insert // Function that inserts a new node into the binary tree
 createTree // Function that creates a binary tree from a file using the Insert function
