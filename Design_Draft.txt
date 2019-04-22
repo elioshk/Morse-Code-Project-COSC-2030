@@ -1,0 +1,22 @@
+//Design_Draft.txt
+//Group members:
+//Eli Oceanak, Galen Damosso, Fred Wittman, Josh Mallone, Trevor
+
+This project will be an abstract data type that will take an input file,
+ask the user if the file is either written in morse or plain english, and
+then create an output file of the opposite of the file's langauage.
+
+All of the pseudocode for this assignment can be viewed in the pseudocode.txt
+file that will accompany this one.
+
+The program will be written in C++, and utilize existing files to build it's 
+own two binary search trees of morse and english respectively, for conversion
+between the two. By building the tree in real-time, this program will be able
+to add more symbols to the morse/english chart without much trouble to the user.
+
+This means the morse code key can be extended to include symbols from other languages
+and even emojis by the user, and can encode such things into morse. This will
+be especially useful to the user, as being able to easily and quickly modify
+the length and existence of the language will allow for any changes they wish
+without programmer modification. 
+
