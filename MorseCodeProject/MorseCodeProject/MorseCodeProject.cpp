@@ -4,37 +4,86 @@
 #include "pch.h"
 #include <iostream>
 #include <string>
+#include <fstream>
+#include <stdlib.h> 
+#include <stdio.h>   
 
-using std::string
+using namespace std;
 
-class Node { // General Node class
-	string value; // Either a letter or string of dots and dashes
-	Node* left;
-	Node* right;
+struct node { // General Node class
+	string alpha; // Either a letter or string of dots and dashes
+	string morse;
+	struct node *left, *right;
+};
+
+struct node *nextNode(string alpha, string morse) {
+	struct node *temp = (struct node*)malloc(sizeof(struct node));
+	temp->alpha = alpha;
+	temp->morse = morse;
+	temp->left = temp->right = NULL;
+	return temp;
 }
 
-void insertNode(Node* temp, Node tree) {} // Insert a Node into the tree
+struct node* insertNode(struct node *previous, string alpha, string morse) {
+	if (previous == NULL) {
+		return nextNode(alpha, morse);
+	}
+	if (int(alpha[0]) < int(previous->alpha[0])) {
+		previous->left = insertNode(previous->left, alpha, morse);
+	}
+	else if(int(alpha[0]) >= int(previous->alpha[0])){
+		previous->right = insertNode(previous->right, alpha, morse);
+	}
+	return previous;
+} // Insert a Node into the tree
 
 void createTree(string inputFile) {} // Opens input file, reads in characters and creates a tree based on the file
 
-string promptUser() {}// Prompts the user for a filename
+string promptUser() {
+	return "";
+}// Prompts the user for a filename
 
-string findLetter(string morse) {} // Search the morse tree for a letter and input it into the file.
+string findMorse(string letter) {
+	return "";
+} // Searches the english tree and spits out a morse value
 
-string findMorse(string letter) {} // Searches the english tree and spits out a morse value
+string decodeEnglish(string morse) {
+	return "";
+} // Uses findMorse to take a string of morse letters and output it into english
 
-string decodeEnglish(string[] morse) {} // Uses findMorse to take a string of morse letters and output it into english
+string decodeMorse(string letters) {
+	return "";
+} // Uses findLetter to take a string of english and spit it out as morse
 
-string decodeMorse(string[] letters) {} // Uses findLetter to take a string of english and spit it out as morse
+string read(string inputFile) {
+	return "";
+} // Reads a file and puts out an array of strings
 
-string[] read(string inputFile) {} // Reads a file and puts out an array of strings
-
-void output(string outputFile) {} // Writes the output to a file.
+void output(string outputFile) {
+	return;
+} // Writes the output to a file.
 
 
 int main()
 {
-
+	cout << "Hello and welcome to the morse to english translator.\n"
+		<< "Please input the name of the text file for the conversion table: ";
+	string tablefile;
+	cin >> tablefile;
+	ifstream table;
+	table.open(tablefile);
+	string alpha;
+	string morse;
+	struct node *root = NULL;
+	cout << "test";
+	table >> alpha >> morse;
+	cout << endl << alpha << " " << morse << endl;
+	root = insertNode(root, alpha, morse);
+	cout << "test";
+	while (!table.eof()) {
+		table >> alpha >> morse;
+		insertNode(root, alpha, morse);
+	}
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
