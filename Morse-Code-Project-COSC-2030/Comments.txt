@@ -1,0 +1,7 @@
+But this design document should give the Abstract Data Type, the (1) data items,
+ and (2) operations that together provide a Morse Code service.
+
+AND there is only one Binary Search Tree!  Very important.  That's for English-to-Morse.
+For the other translation, an array or dictionary will suffice.
+
+Team, discuss this together and make sure you all understand

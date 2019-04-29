@@ -1,0 +1,3 @@
+﻿  MorseCodeProject.cpp
+d:\repos\morse-code-project-cosc-2030\morsecodeproject\morsecodeproject\morsecodeproject.cpp(104): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  MorseCodeProject.vcxproj -> D:\Repos\Morse-Code-Project-COSC-2030\MorseCodeProject\x64\Debug\MorseCodeProject.exe

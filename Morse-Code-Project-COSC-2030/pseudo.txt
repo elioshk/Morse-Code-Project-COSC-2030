@@ -1,0 +1,33 @@
+    
+Group members:
+
+Eli Oceanak
+
+Galen Damosso
+
+Fred Wittman
+
+Josh Mallone
+
+Trevor
+
+
+Node // Class which defines a node of a binary tree
+Insert // Function that inserts a new node into the binary tree
+createTree // Function that creates a binary tree from a file using the Insert function
+promptUser // Function that prompts user to define which mode (E2M or M2E), then promps for file a path to be encoded/decoded until a valid file path is entered. Ends program if sentinel value is entered. :
+	// Invariant:
+	while input not E2M or M2E
+		What Mode?
+	Mode = input
+	While ...
+	
+findLetter // Function that takes a morse letter and searches the binary tree for the corrosponding english letter
+findMorse // Function that takes an english letter and searches the binary tree for the corrosponding morse letter
+decodeEnglish // Function that takes an array of morse letters and generates a string of english using the findMorse function
+decodeMorse // Function that takes an array of english letters and generates a string of morse using the findLetter function
+readEnglish // 
+readMorse // 
+outputEnglsih // 
+outputMorse //
+
