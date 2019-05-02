@@ -4,7 +4,9 @@
 ##### 30 April 2019
 
 
-# Morse/English Converter Data Type
+![team logo](https://github.com/elioshk/Morse-Code-Project-COSC-2030/blob/master/logo%20final.png)
+
+# Team 404's Morse/English Converter Data Type
 
 ## ADT Summary
 
