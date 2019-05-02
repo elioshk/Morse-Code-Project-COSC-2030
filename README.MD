@@ -14,33 +14,39 @@ This abstract data type converts text files in Morse or English into the other. 
 
 ### Data Items
 
-This steganography ADT does not include any global variables.  Major local variables in the operations encode and decode include:
+This steganography ADT does includes 2 global variables, a binary tree starting at a root node, and a dictionary table. These variables and other major data types used in the encoding/decoding of Morse and English files are listed below, along with their purpose:
 
-#### message
-message is a sequentially ordered list of the bits that correspond to the ASCII characters of the secret message.
+#### infile
+"infile" is the name that will be input by the user of the text file they wish to convert. "infile" should hold either morse code or english to be converted.
 
-#### line_as_list
-line_as_list stores pixels, which are strings, as sequentially ordered lists
+#### outfile
+"outfile" is the file the user wishes to write the converted text to. This can be any text file, though it must be created and in the directory beforehand.
 
-#### binary_array
-binary_array is a sequentially ordered list that stores the binary value of individual hexidecimal characters.
+#### node
+The node data type is comprised of 2 variable values, "key" and "val", where "val" is the alpha value the node holds, and "key" is the morse value.
+
+#### treeRoot
+This is the root node of an entire binary tree of english values. The tree is followed in the order of the dots and dashes, which follow the left and right children respectively
+
+#### table
+"table" is the name of the dictionary of english and morse codes. This is made in key:value pairs which works well for conversion between the two.
 
 ### Operations
 
-#### encode (in_file, out_file, message_file)
-* Parameters: a bit-map image as a read file, an empty text file to write the encoded pixels to, and a single-line message as a read file.
+#### createTree (in_file, root)
+* Parameters: a text file as a read file of the Morse/English conversion table, and a root node for the base of the tree.
 * Pseudocode:
-  1. Write the lines of the image file to a list.  Originally, our team performed operations on the data taken from the image file and    wrote the output directly to the out-file.  We opted to store the pixels in an array because we felt it would make the ADT amenable to more sophisticated encryption techniques, moving forward.
-  2. Store the secret message as a list of bits corresponding to the ASCII characters.
-  3. Modify the image file's first pixel's green and blue pixels to contain the length of the message and the amount of overflow in bits, respectively.
-  4. With use of an index variable, cycle through the red, green, and blue elements for each new pixel.  Change the least significant bit of the appropriate hexidecimal character to match the corresponding bit in the secret message.
-  5. Write the altered pixels to the out-file.
-  6. If the length of the message in bits is shorter than the number of pixels, write the remaining pixels to the out-file in an unaltered state.
+  1. Opens the in_file
+  2. Pulls a line from in_file
+  3. Splits the line into an alpha value and a morse value
+  4. Inserts a new node using the insert() function, passing the root and a new node with the alpha and morse values in it as parameters
+  5. Repeats from step 2 until the file is out of usable lines
+  6. Closes in_file
 
-#### decode (encoded_message, message_file)
-* Parameters: an image file that contains the secret message and a text file to write the message to
+#### insert (root, node)
+* Parameters: A root node for the binary tree, and a node to insert
 * Pseudocode:
-  1. Read the first pixel of the encoded message and declare the length of the message and degree of overflow as variables.
+  1. 
   2. With use of an index variables to point to the appropriate pixel element and to stop reading at the end of the secret message, read through the file and add the bits that correspond to the ASCII characters to a list.
   3. Translate the bits to ASCII characters and write the secret message to the out-file.
   4. Write the length of the message in bits and the degree of overflow in bits to the out-file.
