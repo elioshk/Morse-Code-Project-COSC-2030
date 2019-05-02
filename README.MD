@@ -115,11 +115,13 @@ E2MTest2.txt:
 This has made a lot of people very angry and been widely regarded as a bad move."
 -Douglas Adams
 
-output.txt:
+output.txt: (spacing won't format correctly in the markdown, but there are two spaces between letters and three between words)
 
  ------  ..  -.   -  ....  .   -...  .  --.  ..  -.  -.  ..  -.  --.   -  ....  .   ..-  -.  ..  ...-  .  .-.  ...  .   .--  .-  ...   -.-.  .-.  .  .-  -  .  -..  .-.-.-  -  ....  ..  ...   ....  .-  ...   --  .-  -..  .   .-   .-..  ---  -   ---  ..-.   .--.  .  ---  .--.  .-..  .   ...-  .  .-.  -.--   .-  -.  --.  .-.  -.--   .-  -.  -..   -...  .  .  -.   .--  ..  -..  .  .-..  -.--   .-.  .  --.  .-  .-.  -..  .  -..   .-  ...   .-   -...  .-  -..   --  ---  ...-  .  .-.-.-  ------  -....-  -..  ---  ..-  --.  .-..  .-  ...   .-  -..  .-  --  ... 
 
 
-## Suggestions for Improvement
+## Enhancement suggestion
 
 * Modify the MorseTable.txt to include capital characters so conversion to lowercase isn't a necessity.
+
+The capital values would be distinguished just like other characters, due to unique morse code patterns. The dictionary for English-To-Morse would also work well with this change, as it would require no code changing. The key:value pairs would still be unique for capital letters.
