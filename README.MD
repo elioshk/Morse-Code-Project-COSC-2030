@@ -110,11 +110,13 @@ Consider the the output when the following input is given:
 Below is a comparison of sections of the text file of the input, and the output file.
 
 E2MTest2.txt:
+
 "In the beginning the Universe was created.
 This has made a lot of people very angry and been widely regarded as a bad move."
 -Douglas Adams
 
 output.txt:
+
  ------  ..  -.   -  ....  .   -...  .  --.  ..  -.  -.  ..  -.  --.   -  ....  .   ..-  -.  ..  ...-  .  .-.  ...  .   .--  .-  ...   -.-.  .-.  .  .-  -  .  -..  .-.-.-  -  ....  ..  ...   ....  .-  ...   --  .-  -..  .   .-   .-..  ---  -   ---  ..-.   .--.  .  ---  .--.  .-..  .   ...-  .  .-.  -.--   .-  -.  --.  .-.  -.--   .-  -.  -..   -...  .  .  -.   .--  ..  -..  .  .-..  -.--   .-.  .  --.  .-  .-.  -..  .  -..   .-  ...   .-   -...  .-  -..   --  ---  ...-  .  .-.-.-  ------  -....-  -..  ---  ..-  --.  .-..  .-  ...   .-  -..  .-  --  ... 
 
 
