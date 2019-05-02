@@ -121,4 +121,3 @@ output.txt:
 ## Suggestions for Improvement
 
 * Modify the MorseTable.txt to include capital characters so conversion to lowercase isn't a necessity.
-* Add code to read and determine appropriate line breaks so as to add some neatness to the morse translation. It currently is all output on one line which makes it annoying to read.
