@@ -1,14 +1,14 @@
-##### Frederick Wittman, Cameron Peete, Nico Shober, Michael Kessel, and Colin Woods
+##### Frederick Wittman, Eli Oceanak, Josh Malone, Galen Damosso, Trevor Evenson
 ##### Dr. Hill
 ##### COSC 2030-01
-##### 28 March 2019
+##### 30 April 2019
 
 
-# Steganography Abstract Data Type
+# Morse/English Converter Data Type
 
 ## ADT Summary
 
-This abstract data type encodes secret messages in bit-map image files.  It modifies the red, green, and blue elements of a base pixel file to accomplish this.  The end result is nearly indistinguishable from the base file.
+This abstract data type converts text files in Morse or English into the other.  The Morse to English conversion is done using a binary tree, with the dots and dashes of Morse acting as left and right node pathways. The English to Morse is done using a simple dictionary lookup.
 
 ## Data Items and Operations
 
