@@ -88,28 +88,24 @@ This is the root node of an entire binary tree of english values. The tree is fo
 4. Writes to the outfile, using the "."s and "-"s to go through the binary tree starting at the root paramater, outputting the correct alpha value into the file.
 5. Repeats from step 2 until the file is out of usable lines.
 
-#### EnglishToMorse(table, infile, outfile)
+#### englishToMorse(table, infile, outfile)
 * Parameter: the table variable that contains an english-morse dictionary, and two text files for input and output.
 * Pseudocode:
 1. Opens the infile and outfile as read and write respectively.
 2. Goes through every line in the infile, converts all the characters to lowercase, and strips off whitespace to the right of each line.
 3. Goes through each letter in the line, converting to morse and writing to the outfile, and writes a space if the letter is a space.
 
-#### dec_to_hex (dec_number)
-* Parameter: a string
+#### userInterface()
+* userInterface() creates a simple mehtod for user interaction, asking whether the user would like to convert Morse to English or vice-versa. The method also will ask for input of an input and output file, which will be assumed to be in the same directory as the project. A full file directory elsewhere will also work, however.
 
-#### hex_to_dec (hex_number):
-* Parameter: a string
-* hex_to_dec takes a hexidecimal number, cast as a string, and returns a decimal number cast as a string. 
+* After finishing the conversion, the method will immediately prompt for another conversion. typing "exit" at any time will allow the user to exit the program.
 
 ## Example
-Consider the the output when the following functions are called:
+Consider the the output when the following input is given:
 
-```encode("pixel_in.txt", "pixel_out.txt", "message_in.txt")``` 
+```English to Morse is chosen: infile = "E2MTest2.txt, outfile = "output.txt"``` 
 
-```decode("pixel_out.txt", "message_out.txt")```
-
-Below is a comparison of sections of the image file before and after the secret message has been encoded.  Notice that the pixel values have subtly changed in accordance with the scheme described above.  Additionally, note that the green and blue elements of the first pixel reflect the total number of bits in the message to be encoded, in this case "Dr. Hill", and the degree of overflow in bits, respectively.
+Below is a comparison of sections of the text file of the input, and the output file.
 
 ![alt text](https://github.com/frederickwittman95/Group-project-1/blob/master/photos/after_encode.PNG "Logo Title Text 1")
 ![alt text](https://github.com/frederickwittman95/Group-project-1/blob/master/photos/before_encode.PNG "Logo Title Text 1")
