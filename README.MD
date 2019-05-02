@@ -107,20 +107,16 @@ Consider the the output when the following input is given:
 
 Below is a comparison of sections of the text file of the input, and the output file.
 
-![alt text](https://github.com/frederickwittman95/Group-project-1/blob/master/photos/after_encode.PNG "Logo Title Text 1")
-![alt text](https://github.com/frederickwittman95/Group-project-1/blob/master/photos/before_encode.PNG "Logo Title Text 1")
+E2MTest2.txt:
+"In the beginning the Universe was created.
+This has made a lot of people very angry and been widely regarded as a bad move."
+-Douglas Adams
 
-Here is the output when the encoded pixels have been decoded:
+output.txt:
+ ------  ..  -.   -  ....  .   -...  .  --.  ..  -.  -.  ..  -.  --.   -  ....  .   ..-  -.  ..  ...-  .  .-.  ...  .   .--  .-  ...   -.-.  .-.  .  .-  -  .  -..  .-.-.-  -  ....  ..  ...   ....  .-  ...   --  .-  -..  .   .-   .-..  ---  -   ---  ..-.   .--.  .  ---  .--.  .-..  .   ...-  .  .-.  -.--   .-  -.  --.  .-.  -.--   .-  -.  -..   -...  .  .  -.   .--  ..  -..  .  .-..  -.--   .-.  .  --.  .-  .-.  -..  .  -..   .-  ...   .-   -...  .-  -..   --  ---  ...-  .  .-.-.-  ------  -....-  -..  ---  ..-  --.  .-..  .-  ...   .-  -..  .-  --  ... 
 
-![alt text](https://github.com/frederickwittman95/Group-project-1/blob/master/photos/output.PNG "Logo Title Text 1")
 
 ## Suggestions for Improvement
 
-* Modify the encode, decode, and ascii_to_binary functions to allow the stenography ADT to process messages with multiple lines.
-* Add code to read pixels directly from, and write directly to, PNG images.
-
-## Citation
-
-Special thanks to jfs of stackoverflow, whose code was the inspiration for the core of the ascii_to_binary and bin_to_ascii functions.
-
-[jfs answer](https://stackoverflow.com/questions/7396849/convert-binary-to-ascii-and-vice-versa)
+* Modify the MorseTable.txt to include capital characters so conversion to lowercase isn't a necessity.
+* Add code to read and determine appropriate line breaks so as to add some neatness to the morse translation. It currently is all output on one line which makes it annoying to read.
