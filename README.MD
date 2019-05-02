@@ -22,6 +22,9 @@ This steganography ADT does includes 2 global variables, a binary tree starting 
 #### outfile
 "outfile" is the file the user wishes to write the converted text to. This can be any text file, though it must be created and in the directory beforehand.
 
+#### MorseTable
+"MorseTable" is the file that holds the conversion chart for Morse and English. It is used to fill up the following items with data.
+
 #### node
 The node data type is comprised of 2 variable values, "key" and "val", where "val" is the alpha value the node holds, and "key" is the morse value.
 
@@ -46,30 +49,54 @@ This is the root node of an entire binary tree of english values. The tree is fo
 #### insert (root, node)
 * Parameters: A root node for the binary tree, and a node to insert
 * Pseudocode:
-  1. 
-  2. With use of an index variables to point to the appropriate pixel element and to stop reading at the end of the secret message, read through the file and add the bits that correspond to the ASCII characters to a list.
-  3. Translate the bits to ASCII characters and write the secret message to the out-file.
-  4. Write the length of the message in bits and the degree of overflow in bits to the out-file.
+  1. Checks if the length of the morse value in the node parameter is above 1
+  True:
+  1. Pops off the first value of the morse value in the node
+  2. If the popped character is "-", the function will create a new node as a right child the the previous and recursively call itself
+  3. The same thing happens on the left node pointer if the popped character is "."
+  False:
+  1. Checks if the length of the morse value is 1
+  2. Checks if the node on the correct side of the previous exists
+  3. If it doesn't, inserts a new node on the left or right side of the previous, using either "-" or "." to decide.
+     Passes the new node the alpha value
+  4. if the node exists, the function changes it's alpha value to the original node paramater's alpha value.
+ 
 
-#### ascii_to_bin (message_file)
-* Parameter: a text file
-* ascii_to_bin reads a line from its parameter and returns the line's contents as a list of binary numbers.  The list of binary numbers corresponds to the appropriate ASCII characters.  The core of the ascii_to_bin function is the from_bytes function.
+#### buildDict (morseTable)
+* Parameter: the "MorseTable.txt" text file
+* Pseudocode:
+1. Opens the morseTable txt file
+2. Reads in a line from morseTable and strips the white space off of them
+3. Inserts the alpha and morse values into the table global variable using key:value pairs
+4. Repeats from step 2 until out of usable lines
+5. Closes the morseTable txt file.
 
-#### binary_to_ascii (binary_number)
-* Parameter: a string
-* binary_to_ascii takes a string of binary numbers as its parameter and returns a string of the corresponding ASCII characters.  The core of the binary_to_ascii function is the from_bytes function.
+#### search (root, key)
+* Parameters: root node for the binary tree for morse to english, an alpha value in "key"
+* Pseudocode:
+1. Checks the length of the morse value stored in the passed in node
+2. If the length is 0, either returns the alpha value stored in "key" of the node, or an error message displaying there is no value to return.
+3. If the length is greater than 0, pops off the first value of the morse string stored in the passed in node.
+4. Depending on if the value popped was either a "." or "-", the function recursively calls itself passing in the right or left node pointer of the root paramater.
 
-#### hex_to_bin (hex_number)
-* Parameter: a string
-* hex_to_bin takes a hexidecimal number, cast as a string, and returns a binary number cast as a string.
+#### morseToEnglish(infile, outfile, root)
+* Parameter: two text file directories, one for input and one for output, and a root node for the binary tree
+* Pseudocode:
+1. Opens the infile and outfile as read and write respectively
+2. Goes through every line in the infile, and creates a new array and resets a counter variable each time.
+3. Adds "." and "-"s to the array each time encountered
+4. Writes to the outfile, using the "."s and "-"s to go through the binary tree starting at the root paramater, outputting the correct alpha value into the file.
+5. Repeats from step 2 until the file is out of usable lines.
 
-#### bin_to_hex (bin_number)
-* Parameter: a string
-* bin_to_hex takes a binary number, cast as a string, and returns a hexidecimal number cast as a string.
+#### EnglishToMorse(table, infile, outfile)
+* Parameter: the table variable that contains an english-morse dictionary, and two text files for input and output.
+* Pseudocode:
+1. Opens the infile and outfile as read and write respectively.
+2. Goes through every line in the infile, converts all the characters to lowercase, and strips off whitespace to the right of each line.
+3. Goes through each letter in the line, converting to morse and writing to the outfile, and writes a space if the letter is a space.
 
 #### dec_to_hex (dec_number)
 * Parameter: a string
-* dec_to_hex takes a decimal number, cast as a string, and returns a hexidecimal number cast as a string.
 
 #### hex_to_dec (hex_number):
 * Parameter: a string
